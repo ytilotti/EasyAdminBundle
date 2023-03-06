@@ -92,6 +92,8 @@ final class AssociationConfigurator implements FieldConfiguratorInterface
             $field->setFormTypeOption('attr.data-ea-widget', 'ea-autocomplete');
         }
 
+        $field->setFormTypeOption('attr.data-ea-escape-markup', $field->getCustomOption(ChoiceField::OPTION_ESCAPE_HTML_CONTENTS));
+
         // check for embedded associations
         $propertyNameParts = explode('.', $propertyName);
         if (\count($propertyNameParts) > 1) {
